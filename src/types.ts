@@ -13,3 +13,16 @@ export interface PartItem {
   images: string[];
   crossReference: string[];
 }
+
+export interface Inquiry {
+  id: string;
+  partId: string;
+  partName: string;
+  brand: string;
+  oem: string;
+  quantity: number;
+  customerName: string;
+  customerPhone: string;
+  timestamp: number;
+  status: 'pending' | 'accepted' | 'rejected';
+}
