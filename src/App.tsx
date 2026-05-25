@@ -142,7 +142,7 @@ const BottomSheet: React.FC<{
       `----------------------------------\n` +
       `_Please confirm availability and wholesale pricing._`;
 
-    const url = `https://wa.me/+971544472873?text=${encodeURIComponent(message)}`;
+    const url = `https://wa.me/+971505715704?text=${encodeURIComponent(message)}`;
     window.open(url, "_blank");
     onClose();
   };
@@ -283,7 +283,7 @@ const BottomSheet: React.FC<{
                       </span>
                     </div>
 
-                    <div className="flex-grow flex items-center flex-col gap-3">
+                    <div className="flex-grow flex items-center gap-3">
                       <div className="flex items-center bg-slate-100 rounded-xl p-1">
                         <button
                           onClick={() => setQuantity(Math.max(1, quantity - 1))}
@@ -302,27 +302,25 @@ const BottomSheet: React.FC<{
                         </button>
                       </div>
 
-                      <div>
-                        <button
-                          onClick={() => {
-                            const text = `Check out this part: ${part.name} (OEM: ${part.oem}) at AutoPart Pro!`;
-                            navigator.clipboard.writeText(text);
-                            alert("Link copied to clipboard!");
-                          }}
-                          className="p-3.5 bg-slate-100 text-slate-600 rounded-xl active:scale-90 transition-transform"
-                          title="Share to Colleague"
-                        >
-                          <Share2 size={18} />
-                        </button>
+                      <button
+                        onClick={() => {
+                          const text = `Check out this part: ${part.name} (OEM: ${part.oem}) at AutoPart Pro!`;
+                          navigator.clipboard.writeText(text);
+                          alert("Link copied to clipboard!");
+                        }}
+                        className="p-3.5 bg-slate-100 text-slate-600 rounded-xl active:scale-90 transition-transform"
+                        title="Share to Colleague"
+                      >
+                        <Share2 size={18} />
+                      </button>
 
-                        <button
-                          onClick={() => setShowForm(true)}
-                          className="flex-grow flex items-center justify-center gap-2 bg-emerald-600 text-white py-3.5 rounded-xl font-bold text-sm shadow-lg shadow-emerald-100 active:scale-95 transition-all"
-                        >
-                          <MessageCircle size={18} />
-                          Request
-                        </button>
-                      </div>
+                      <button
+                        onClick={() => setShowForm(true)}
+                        className="flex-grow flex items-center justify-center gap-2 bg-emerald-600 text-white py-3.5 rounded-xl font-bold text-sm shadow-lg shadow-emerald-100 active:scale-95 transition-all"
+                      >
+                        <MessageCircle size={18} />
+                        Request
+                      </button>
                     </div>
                   </div>
                 </>
